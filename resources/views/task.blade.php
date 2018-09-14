@@ -34,15 +34,22 @@
   <th>Task</th>
   <th>Completed</th>
   @foreach($tasks as $task)
-  <tr>
-  <td>{{$task->id}}</td>
-  <td>{{$task->task}}</td>
-  <td>{{$task->isCompleted}}</td>
-  </tr>
+    <tr>
+        <td>{{$task->id}}</td>
+        <td>{{$task->task}}</td>
+        <td>
+        @if($task->iscompleted)
+        
+            <button class="btn btn-success">Completed</button>
+        @else
+            <button class="btn btn-warning">Not Completed</button>
+        @endif
+    </td>
+    </tr>
   @endforeach
   </table>
    </div>
-   </div></div> 
+   </div></div>  
     </div>
 </body>
 </html>
